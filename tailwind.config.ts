@@ -6,7 +6,15 @@ const config: Config = {
 		"./src/lib/**/*.{js,ts,jsx,tsx,mdx}"
 	],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				background: "#E4EADC",
+				green: "#A5CA7B",
+				red: "#E66568",
+				blue: "#98C2D3",
+				black: "#000000"
+			}
+		}
 	},
 	plugins: []
 }

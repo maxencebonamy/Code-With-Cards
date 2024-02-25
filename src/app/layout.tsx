@@ -1,23 +1,23 @@
 import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
+import { Fredoka } from "next/font/google"
 import "@/lib/styles/globals.css"
 import type { PropsWithChildren, ReactElement } from "react"
 
-const font = Poppins({
-	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-	style: ["normal", "italic"],
+const font = Fredoka({
+	weight: ["300", "400", "500", "600", "700"],
+	style: ["normal"],
 	subsets: ["latin"],
 	display: "swap"
 })
 
 export const metadata: Metadata = {
-	title: "",
-	description: ""
+	title: "Code With Cards",
+	description: "Apprends à coder avec des cartes !"
 }
 
 export default ({ children }: PropsWithChildren): ReactElement => {
 	return (
-		<html lang="en">
+		<html lang="fr">
 			<body className={font.className}>{children}</body>
 		</html>
 	)
