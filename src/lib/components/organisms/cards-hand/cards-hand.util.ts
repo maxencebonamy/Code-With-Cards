@@ -1,0 +1,1 @@
+export const CARDS_HAND_PADDING = 32

@@ -5,10 +5,12 @@ import { CARD_STYLE, type CardProps } from "."
 import clsx from "clsx"
 import { formatColor } from "@/lib/utils/colors"
 import { randint } from "@/lib/utils/random"
+import { useCardsStore } from "@/lib/stores/cards"
 
-export const Card = ({ card, index, inHand = false, className }: CardProps): ReactElement => {
+export const Card = ({ card, index = 0, inHand = false, className }: CardProps): ReactElement => {
 	const [hover, setHover] = useState(false)
 	const [rotate, _] = useState(randint(-4, 4))
+	const tranferCard = useCardsStore(state => state.tranferCard)
 
 	const style = clsx(
 		"shadow-card",
@@ -20,10 +22,18 @@ export const Card = ({ card, index, inHand = false, className }: CardProps): Rea
 	)
 
 	const cssStyle = {
-		zIndex: index,
+		zIndex: inHand ? index : "auto",
 		backgroundColor: formatColor(card.color),
 		transform: inHand ? `${hover ? "translateY(-8px)" : `rotate(${rotate}deg)`} ` : "",
 		...CARD_STYLE
+	}
+
+	const onClick = (): void => {
+		if (inHand) {
+			tranferCard("hand", "heap", card.id)
+			return
+		}
+		tranferCard("heap", "hand", card.id)
 	}
 
 	return (
@@ -32,6 +42,7 @@ export const Card = ({ card, index, inHand = false, className }: CardProps): Rea
 			style={cssStyle}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
+			onClick={() => onClick()}
 		>
 			<p className="text-2xl font-semibold text-white text-center">
 				{card.title}

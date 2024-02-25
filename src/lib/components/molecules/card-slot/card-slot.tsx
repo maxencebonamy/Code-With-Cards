@@ -1,15 +1,21 @@
 import type { ReactElement } from "react"
 import type { CardSlotProps } from "."
 import clsx from "clsx"
-import { CARD_STYLE } from "../card"
+import { CARD_STYLE, Card } from "../card"
 
-export const CardSlot = ({ index, className }: CardSlotProps): ReactElement => {
+export const CardSlot = ({ index, card, className }: CardSlotProps): ReactElement => {
 	const style = clsx(
 		"bg-background shadow-card-slot",
 		"rounded-3xl",
 		"flex items-center justify-center",
 		className ?? ""
 	)
+
+	if (card) {
+		return (
+			<Card card={card} />
+		)
+	}
 
 	return (
 		<div className={style} style={{ ...CARD_STYLE }}>

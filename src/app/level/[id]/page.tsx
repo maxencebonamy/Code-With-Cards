@@ -3,9 +3,9 @@ import type { PageParams } from "./page.type"
 import { Navbar } from "@/lib/components/organisms/navbar"
 import config from "@/lib/data/config.json"
 import { redirect } from "next/navigation"
-import { CardSlot } from "@/lib/components/molecules/card-slot"
 import { CardsHand } from "@/lib/components/organisms/cards-hand"
-import type { CardType } from "@/lib/components/molecules/card"
+import { CardsHeap } from "@/lib/components/organisms/cards-heap"
+import { LevelProvider } from "@/lib/providers/level"
 
 export default ({ params }: {params: PageParams}): ReactElement => {
 	const levelId = parseInt(params.id)
@@ -13,30 +13,16 @@ export default ({ params }: {params: PageParams}): ReactElement => {
 		redirect("/level")
 	}
 
-	const cards: CardType[] = [
-		{ color: "red", title: "CONDITION" },
-		{ color: "green", title: "BOUCLE FOR" },
-		{ color: "blue", title: "AVANCER" },
-		{ color: "green", title: "BOUCLE WHILE" },
-		{ color: "blue", title: "TOURNER" }
-	]
-
 	return (
-		<main className="flex flex-col items-center justify-start gap-5">
-			<Navbar title={`Niveau ${params.id}`} />
+		<LevelProvider level={levelId}>
+			<main className="h-full flex flex-col items-center justify-between gap-5">
+				<Navbar title={`Niveau ${params.id}`} />
 
-			<div className="flex flex-row items-center justify-center gap-8 m-8">
-				{
-					[...Array<undefined>(6)].map((_, index) => (
-						<CardSlot
-							key={index}
-							index={index + 1}
-						/>
-					))
-				}
-			</div>
-
-			<CardsHand cards={cards} />
-		</main>
+				<section className="w-full flex flex-col items-center justify-end">
+					<CardsHeap nbSlots={8} className="w-full" />
+					<CardsHand className="w-full" />
+				</section>
+			</main>
+		</LevelProvider>
 	)
 }

@@ -1,0 +1,1 @@
+export const CARDS_HEAP_PADDING = 32

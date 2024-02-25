@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default ({ children }: PropsWithChildren): ReactElement => {
 	return (
 		<html lang="fr">
-			<body className={clsx(font.className, "bg-background overflow-x-hidden")}>{children}</body>
+			<body className={clsx(font.className, "bg-background overflow-x-hidden h-screen")}>{children}</body>
 		</html>
 	)
 }

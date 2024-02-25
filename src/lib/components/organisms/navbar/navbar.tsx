@@ -5,7 +5,7 @@ import { Button } from "@/lib/components/atoms/button"
 
 export const Navbar = ({ title }: NavbarProps): ReactElement => {
 	const style = clsx(
-		"bg-background shadow-frame",
+		"bg-background shadow-bottom",
 		"sticky z-50 top-0 w-full h-16 p-3",
 		"flex flex-row justify-between items-center"
 	)

@@ -6,8 +6,8 @@ import clsx from "clsx"
 import { computeColor } from "./button.util"
 
 export const Button = ({ name, color, className, onClick }: ButtonProps): ReactElement => {
-	const [hover, setHover] = useState<boolean>(false)
-	const [click, setClick] = useState<boolean>(false)
+	const [hover, setHover] = useState(false)
+	const [click, setClick] = useState(false)
 
 	const buttonStyle = clsx(
 		"px-6 py-1",
