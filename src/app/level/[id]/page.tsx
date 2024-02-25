@@ -4,13 +4,22 @@ import { Navbar } from "@/lib/components/organisms/navbar"
 import config from "@/lib/data/config.json"
 import { redirect } from "next/navigation"
 import { CardSlot } from "@/lib/components/molecules/card-slot"
-import { Card } from "@/lib/components/molecules/card"
+import { CardsHand } from "@/lib/components/organisms/cards-hand"
+import type { CardType } from "@/lib/components/molecules/card"
 
 export default ({ params }: {params: PageParams}): ReactElement => {
 	const levelId = parseInt(params.id)
 	if (!levelId || levelId < 1 || levelId > config.nbLevels) {
 		redirect("/level")
 	}
+
+	const cards: CardType[] = [
+		{ color: "red", title: "CONDITION" },
+		{ color: "green", title: "BOUCLE FOR" },
+		{ color: "blue", title: "AVANCER" },
+		{ color: "green", title: "BOUCLE WHILE" },
+		{ color: "blue", title: "TOURNER" }
+	]
 
 	return (
 		<main className="flex flex-col items-center justify-start gap-5">
@@ -27,14 +36,7 @@ export default ({ params }: {params: PageParams}): ReactElement => {
 				}
 			</div>
 
-			<div className="flex flex-row items-center justify-center gap-8 m-8">
-				<Card color="blue" title="Test" />
-				<Card color="red" title="Test" />
-				<Card color="green" title="Test" />
-				<Card color="red" title="Test" />
-				<Card color="blue" title="Test" />
-				<Card color="green" title="Test" />
-			</div>
+			<CardsHand cards={cards} />
 		</main>
 	)
 }
