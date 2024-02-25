@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Fredoka } from "next/font/google"
 import "@/lib/styles/globals.css"
 import type { PropsWithChildren, ReactElement } from "react"
+import clsx from "clsx"
 
 const font = Fredoka({
 	weight: ["300", "400", "500", "600", "700"],
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default ({ children }: PropsWithChildren): ReactElement => {
 	return (
 		<html lang="fr">
-			<body className={font.className}>{children}</body>
+			<body className={clsx(font.className, "bg-background")}>{children}</body>
 		</html>
 	)
 }

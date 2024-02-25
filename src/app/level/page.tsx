@@ -1,3 +1,7 @@
+/**
+ * Choix du niveau
+ */
+
 import type { ReactElement } from "react"
 
 export default (): ReactElement => {
