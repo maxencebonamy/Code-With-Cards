@@ -17,6 +17,7 @@ const config: Config = {
 			},
 			boxShadow: {
 				"frame": "0 10px 10px rgba(0, 0, 0, 0.25)",
+				"card": "4px 4px 4px rgba(0, 0, 0, 0.25)",
 				"card-slot": "inset 4px 4px 12px rgba(0, 0, 0, 0.5)"
 			}
 		}

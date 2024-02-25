@@ -1,8 +1,8 @@
-export type ButtonColor = "green" | "blue" | "red"
+import type { Color } from "@/lib/utils/colors"
 
 export type ButtonProps = {
 	name: string
-	color: ButtonColor
+	color: Color
 	className?: string
 	onClick?: () => void
 }

@@ -1,3 +1,5 @@
+import type { Color } from "."
+
 const hexToRgb = (color: string): { r: number, g: number, b: number } => {
 	const hex = color.replace("#", "")
 
@@ -35,4 +37,15 @@ export const lighten = (color: string, amount: number): string => {
 	const b = Math.min(parsedColor.b + amount, 255)
 
 	return rgbToHex(r, g, b)
+}
+
+export const formatColor = (color: Color): string => {
+	switch (color) {
+	case "green":
+		return "#A5CA7B"
+	case "red":
+		return "#E66568"
+	case "blue":
+		return "#98C2D3"
+	}
 }

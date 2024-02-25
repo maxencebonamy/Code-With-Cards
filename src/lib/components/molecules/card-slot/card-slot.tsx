@@ -6,7 +6,7 @@ import { CARD_STYLE } from "../card"
 export const CardSlot = ({ index, className }: CardSlotProps): ReactElement => {
 	const style = clsx(
 		"bg-background shadow-card-slot",
-		"rounded-xl",
+		"rounded-3xl",
 		"flex items-center justify-center",
 		className ?? ""
 	)

@@ -1,1 +1,2 @@
-import { darken, lighten } from "./colors.util"
+export { darken, lighten, formatColor } from "./colors.util"
+export type { Color } from "./color.type"
