@@ -6,25 +6,12 @@ import { useEffect, type ReactElement } from "react"
 import type { Card } from "@/lib/utils/cards"
 import { createCard, CardType } from "@/lib/utils/cards"
 import { useGameStore } from "@/lib/stores/game"
+import { levelsData } from "@/lib/data/levels"
 
 export const LevelProvider = ({ level, children }: LevelProviderProps): ReactElement => {
-	const board = [
-		"  ooo h",
-		"soo ooo"
-	]
+	const data = levelsData[level]
 
-	const cards: Card[] = [
-		createCard(CardType.Forward, 1),
-		createCard(CardType.Right, 2),
-		createCard(CardType.Left, 3),
-		createCard(CardType.If, 4),
-		createCard(CardType.Else, 5),
-		createCard(CardType.IfEnd, 6),
-		createCard(CardType.For, 7),
-		createCard(CardType.While, 8),
-		createCard(CardType.Until, 9),
-		createCard(CardType.LoopEnd, 10)
-	]
+	const cards: Card[] = data.cards.map((type, index) => createCard(type, index))
 
 	const initGame = useGameStore(state => state.init)
 	const { setHand, setHeap } = useCardsStore(state => ({
@@ -33,9 +20,9 @@ export const LevelProvider = ({ level, children }: LevelProviderProps): ReactEle
 	}))
 
 	useEffect(() => {
-		initGame(board)
+		initGame(data.board)
 		setHand(cards)
-		setHeap(Array<null>(6).fill(null))
+		setHeap(Array<null>(cards.length).fill(null))
 	}, [])
 
 	return (

@@ -1,0 +1,16 @@
+{
+	"level": 1,
+	"board": [
+		"soo  ",
+		"  ooh"
+	],
+	"cards": [
+		"Forward",
+		"Forward",
+		"Forward",
+		"Forward",
+		"Forward",
+		"Right",
+		"Left"
+	]
+}
