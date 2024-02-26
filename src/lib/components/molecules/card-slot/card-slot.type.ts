@@ -1,7 +1,7 @@
-import type { CardType } from "@/lib/stores/cards"
+import type { Card } from "@/lib/utils/cards"
 
 export type CardSlotProps = {
 	index: number
-	card: CardType | null
+	card: Card | null
 	className?: string
 }

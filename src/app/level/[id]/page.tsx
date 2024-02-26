@@ -6,6 +6,7 @@ import { redirect } from "next/navigation"
 import { CardsHand } from "@/lib/components/organisms/cards-hand"
 import { CardsHeap } from "@/lib/components/organisms/cards-heap"
 import { LevelProvider } from "@/lib/providers/level"
+import { GameBoard } from "@/lib/components/organisms/game-board"
 
 export default ({ params }: {params: PageParams}): ReactElement => {
 	const levelId = parseInt(params.id)
@@ -18,8 +19,10 @@ export default ({ params }: {params: PageParams}): ReactElement => {
 			<main className="h-full flex flex-col items-center justify-between gap-5">
 				<Navbar title={`Niveau ${params.id}`} />
 
+				<GameBoard className="" />
+
 				<section className="w-full flex flex-col items-center justify-end">
-					<CardsHeap nbSlots={8} className="w-full" />
+					<CardsHeap className="w-full" />
 					<CardsHand className="w-full" />
 				</section>
 			</main>

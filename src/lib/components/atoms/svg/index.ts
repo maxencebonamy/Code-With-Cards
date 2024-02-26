@@ -1,4 +1,5 @@
 export type { SvgProps } from "./svg.type"
+
 export { ForwardIcon } from "./forward"
 export { LeftIcon } from "./left"
 export { RightIcon } from "./right"

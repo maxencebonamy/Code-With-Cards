@@ -5,7 +5,7 @@ import { CARD_STYLE, Card } from "../card"
 
 export const CardSlot = ({ index, card, className }: CardSlotProps): ReactElement => {
 	const style = clsx(
-		"bg-background shadow-card-slot",
+		"bg-background shadow-slot",
 		"rounded-3xl",
 		"flex items-center justify-center",
 		className ?? ""
@@ -18,7 +18,7 @@ export const CardSlot = ({ index, card, className }: CardSlotProps): ReactElemen
 	}
 
 	return (
-		<div className={style} style={{ ...CARD_STYLE }}>
+		<div className={style} style={CARD_STYLE}>
 			<p className="font-normal text-9xl text-black opacity-25">
 				{index}
 			</p>

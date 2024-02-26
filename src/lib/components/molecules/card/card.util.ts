@@ -1,6 +1,6 @@
 export const CARD_STYLE = {
-	width: 175,
-	height: 250,
-	minWidth: 175,
-	minHeight: 250
+	width: 150,
+	height: 225,
+	minWidth: 150,
+	minHeight: 225
 }
