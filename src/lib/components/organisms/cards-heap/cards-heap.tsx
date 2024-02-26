@@ -8,7 +8,7 @@ import { CARD_STYLE } from "@/lib/components/molecules/card"
 import { CARDS_HEAP_PADDING } from "./cards-heap.util"
 import { useCardsStore } from "@/lib/stores/cards"
 
-export const CardsHeap = ({ nbSlots, className }: CardsHeapProps): ReactElement => {
+export const CardsHeap = ({ className }: CardsHeapProps): ReactElement => {
 	const style = clsx(
 		"w-full",
 		"flex flex-row items-center justify-center gap-8",
@@ -22,11 +22,11 @@ export const CardsHeap = ({ nbSlots, className }: CardsHeapProps): ReactElement 
 	return (
 		<div className={style} style={{ minHeight: CARD_STYLE.height + CARDS_HEAP_PADDING * 2 }}>
 			{
-				[...Array<undefined>(nbSlots)].map((_, index) => (
+				[...Array<undefined>(cards.length)].map((_, index) => (
 					<CardSlot
 						key={index}
 						index={index + 1}
-						card={cards[index] ?? null}
+						card={cards[index]}
 					/>
 				))
 			}

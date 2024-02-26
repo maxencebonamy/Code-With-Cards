@@ -1,21 +1,33 @@
 "use client"
 
-import type { CardType } from "@/lib/stores/cards"
 import { useCardsStore } from "@/lib/stores/cards"
 import type { LevelProviderProps } from "."
-import type { ReactElement } from "react"
+import { useEffect, type ReactElement } from "react"
+import type { Card } from "@/lib/utils/cards"
+import { createCard, CardType } from "@/lib/utils/cards"
 
 export const LevelProvider = ({ level, children }: LevelProviderProps): ReactElement => {
-	const cards: CardType[] = [
-		{ id: 1, color: "red", title: "CONDITION" },
-		{ id: 2, color: "green", title: "BOUCLE FOR" },
-		{ id: 3, color: "blue", title: "AVANCER" },
-		{ id: 4, color: "green", title: "BOUCLE WHILE" },
-		{ id: 5, color: "blue", title: "TOURNER" }
+	const cards: Card[] = [
+		createCard(CardType.Forward, 1),
+		createCard(CardType.Right, 2),
+		createCard(CardType.Left, 3),
+		createCard(CardType.If, 4),
+		createCard(CardType.Else, 5),
+		createCard(CardType.IfEnd, 6),
+		createCard(CardType.For, 7),
+		createCard(CardType.While, 8),
+		createCard(CardType.Until, 9),
+		createCard(CardType.LoopEnd, 10)
 	]
 
-	const setHand = useCardsStore(state => state.setHand)
-	setHand(cards)
+	const { setHand, setHeap } = useCardsStore(state => ({
+		setHand: state.setHand,
+		setHeap: state.setHeap
+	}))
+	useEffect(() => {
+		setHand(cards)
+		setHeap(Array<null>(6).fill(null))
+	}, [])
 
 	return (
 		<>

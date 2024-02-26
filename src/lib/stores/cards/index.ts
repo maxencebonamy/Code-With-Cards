@@ -1,2 +1,2 @@
 export { useCardsStore } from "./cards.store"
-export type { CardType, CardsState } from "./cards.type"
+export type { CardsState } from "./cards.type"

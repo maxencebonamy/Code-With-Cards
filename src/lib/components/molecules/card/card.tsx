@@ -24,7 +24,7 @@ export const Card = ({ card, index = 0, inHand = false, className }: CardProps):
 	const cssStyle = {
 		zIndex: inHand ? index : "auto",
 		backgroundColor: formatColor(card.color),
-		transform: inHand ? `${hover ? "translateY(-8px)" : `rotate(${rotate}deg)`} ` : "",
+		transform: inHand ? `${hover ? "translateY(-20px)" : `rotate(${rotate}deg)`} ` : "",
 		...CARD_STYLE
 	}
 
@@ -44,7 +44,8 @@ export const Card = ({ card, index = 0, inHand = false, className }: CardProps):
 			onMouseLeave={() => setHover(false)}
 			onClick={() => onClick()}
 		>
-			<p className="text-2xl font-semibold text-white text-center">
+			<card.icon className="w-16 h-16" />
+			<p className="text-2xl font-semibold text-white text-center uppercase">
 				{card.title}
 			</p>
 		</div>
