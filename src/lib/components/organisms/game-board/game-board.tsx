@@ -11,7 +11,6 @@ import { useCardsStore } from "@/lib/stores/cards"
 
 export const GameBoard = ({ className }: GameBoardProps): ReactElement => {
 	const game = useGameStore()
-
 	const cards = useCardsStore(state => state.heap)
 
 	const style = clsx(
@@ -19,32 +18,27 @@ export const GameBoard = ({ className }: GameBoardProps): ReactElement => {
 		className ?? ""
 	)
 
-	const rowStyle = clsx(
-		"flex flex-row items-center justify-center gap-6"
-	)
-
 	useEffect(() => {
-		if (game.status === "running") {
-			const card = cards[game.index]
-			if (!card) {
-				game.reset()
-				return
-			}
+		if (game.status !== "running") return
 
-			card.action({ id: card.id, game, cards })
-
-			const interval = setTimeout(() => {
-				game.step()
-			}, 500)
-
-			return () => clearTimeout(interval)
+		const card = cards[game.index]
+		if (!card) {
+			game.reset()
+			return
 		}
+
+		card.action({ id: card.id, game, cards })
+		const interval = setTimeout(() => {
+			game.step(cards.length - 1)
+		}, 500)
+
+		return () => clearTimeout(interval)
 	}, [game.status, game.index])
 
 	return (
 		<div className={style}>
 			{game.board?.map((row, y) => (
-				<div key={y} className={rowStyle}>
+				<div key={y} className="flex flex-row items-center justify-center gap-6">
 					{row.map((tile, x) => {
 						if (tile === "empty") {
 							return <EmptyItemSlot key={x} />

@@ -96,13 +96,13 @@ export const useGameStore = create<GameState>()(set => ({
 		})
 	},
 
-	step: () => {
+	step: (maxIndex) => {
 		set(state => {
 			const { status, squirrel, hazelnut } = state
 			if (status !== "running") return state
 			if (!squirrel || !hazelnut) return state
 
-			const newStatus = (squirrel.x === hazelnut.x && squirrel.y === hazelnut.y) ? "victory" : status
+			const newStatus = (state.index === maxIndex && squirrel.x === hazelnut.x && squirrel.y === hazelnut.y) ? "victory" : status
 
 			return { ...state, status: newStatus, index: state.index + 1 }
 		})

@@ -15,6 +15,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 			game.forward()
 		}
 	},
+
 	Right: {
 		color: "green",
 		title: "Tourner à droite",
@@ -25,6 +26,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 			game.right()
 		}
 	},
+
 	Left: {
 		color: "green",
 		title: "Tourner à gauche",
@@ -35,6 +37,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 			game.left()
 		}
 	},
+
 	If: {
 		color: "blue",
 		title: "Si",
@@ -43,6 +46,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		prop: null,
 		action: () => {}
 	},
+
 	Else: {
 		color: "blue",
 		title: "Sinon",
@@ -51,6 +55,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		prop: null,
 		action: () => {}
 	},
+
 	IfEnd: {
 		color: "blue",
 		title: "Fin Si",
@@ -59,6 +64,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		prop: null,
 		action: () => {}
 	},
+
 	For: {
 		color: "red",
 		title: "Répéter <selector> fois",
@@ -75,6 +81,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 			})
 		}
 	},
+
 	While: {
 		color: "red",
 		title: "Répéter tant que",
@@ -83,6 +90,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		prop: null,
 		action: () => {}
 	},
+
 	Until: {
 		color: "red",
 		title: "Répéter jusqu'à",
@@ -91,6 +99,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		prop: null,
 		action: () => {}
 	},
+
 	LoopEnd: {
 		color: "red",
 		title: "Fin Répéter",
