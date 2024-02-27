@@ -3,6 +3,7 @@
 	"ignorePatterns": [
 		"scripts/**/**.js",
 		"postcss.config.js",
-		"next.config.js"
+		"next.config.js",
+		"next-env.d.ts"
 	]
 }

@@ -6,7 +6,6 @@ import Link from "next/link"
 import clsx from "clsx"
 import { CARD_STYLE } from "@/lib/components/molecules/card"
 import { computeColor } from "./level-card.util"
-import { LinkButton } from "../../atoms/link-button"
 
 export const LevelCard = ({ level, color, className }: LevelCardProps): ReactElement => {
 	const [hover, setHover] = useState(false)
