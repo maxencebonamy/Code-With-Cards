@@ -48,7 +48,7 @@ export const Button = ({ color, className, onClick, children }: ButtonProps): Re
 				style={{ backgroundColor: computeColor(color, hover) }}
 			/>
 
-			<p className="relative z-30 text-2xl text-white font-medium uppercase">
+			<p className={clsx("relative z-30 text-2xl font-medium uppercase", color === "white" ? "text-black" : "text-white")}>
 				{children}
 			</p>
 		</button>

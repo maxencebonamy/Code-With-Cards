@@ -16,6 +16,7 @@ export type GameState = {
 	hazelnut: ItemState | null
 	status: GameStatus
 	index: number
+	loopIndexes: { cardId: number, loopIndex: number }[]
 
 	init: (level: string[]) => void
 	forward: () => void
@@ -24,4 +25,5 @@ export type GameState = {
 	run: () => void
 	step: () => void
 	reset: () => void
+	setIndex: (index: number) => void
 }

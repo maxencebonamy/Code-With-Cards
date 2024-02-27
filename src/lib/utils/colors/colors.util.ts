@@ -47,5 +47,7 @@ export const formatColor = (color: Color): string => {
 		return "#E66568"
 	case "blue":
 		return "#98C2D3"
+	case "white":
+		return "#FFFFFF"
 	}
 }

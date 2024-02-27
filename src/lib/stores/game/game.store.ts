@@ -17,6 +17,7 @@ export const useGameStore = create<GameState>()(set => ({
 	hazelnut: null,
 	status: "idle",
 	index: 0,
+	loopIndexes: [],
 
 	init: (level) => {
 		const table = level.map(row => row.split(""))
@@ -91,7 +92,7 @@ export const useGameStore = create<GameState>()(set => ({
 		set(state => {
 			if (state.status !== "idle") return state
 
-			return { ...state, status: "running", index: 0 }
+			return { ...state, status: "running", index: 0, loopIndexes: [] }
 		})
 	},
 
@@ -113,7 +114,11 @@ export const useGameStore = create<GameState>()(set => ({
 			if (!squirrel) return state
 			const newSquirrel = { ...squirrel, x: squirrel.xOrigin, y: squirrel.yOrigin, rotation: 0 }
 
-			return { ...state, squirrel: newSquirrel, status: "idle", index: 0 }
+			return { ...state, squirrel: newSquirrel, status: "idle", index: 0, loopIndexes: [] }
 		})
+	},
+
+	setIndex: (index) => {
+		set({ index })
 	}
 }))

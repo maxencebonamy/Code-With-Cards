@@ -6,6 +6,7 @@ export type CardTypeProps = {
 	title: string
 	icon: ComponentType<SVGAttributes<SVGElement>>
 	type: CardType
+	prop: string | number | null
 }
 
 export enum CardType {

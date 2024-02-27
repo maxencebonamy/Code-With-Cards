@@ -1,1 +1,1 @@
-export type Color = "green" | "red" | "blue"
+export type Color = "green" | "red" | "blue" | "white"
