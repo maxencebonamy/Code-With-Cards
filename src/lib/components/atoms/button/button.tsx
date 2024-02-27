@@ -35,15 +35,20 @@ export const Button = ({ color, className, onClick, children }: ButtonProps): Re
 			onMouseUp={() => setClick(false)}
 		>
 			<span
-				className={clsx(spanStyle, "z-0 bg-black opacity-25", click ? "bottom-0" : "-bottom-1")}
-			/>
-
-			<span
-				className={clsx(spanStyle, "z-10 bottom-0")}
+				className={clsx(spanStyle, "z-0", click ? "bottom-0" : "-bottom-1")}
 				style={{ backgroundColor: computeColor(color, hover) }}
 			/>
 
-			<p className="relative z-20 text-2xl text-white font-medium uppercase">
+			<span
+				className={clsx(spanStyle, "z-10 bg-black opacity-25", click ? "bottom-0" : "-bottom-1")}
+			/>
+
+			<span
+				className={clsx(spanStyle, "z-20 bottom-0")}
+				style={{ backgroundColor: computeColor(color, hover) }}
+			/>
+
+			<p className="relative z-30 text-2xl text-white font-medium uppercase">
 				{children}
 			</p>
 		</button>
