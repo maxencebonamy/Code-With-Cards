@@ -1,9 +1,8 @@
 import type { ReactElement } from "react"
 import type { NavbarProps } from "."
 import clsx from "clsx"
-import { GameButton } from "@/lib/components/molecules/game-button"
 
-export const Navbar = ({ title }: NavbarProps): ReactElement => {
+export const Navbar = ({ title, leftButton, rightButton }: NavbarProps): ReactElement => {
 	const style = clsx(
 		"bg-background shadow-bottom",
 		"sticky z-50 top-0 w-full h-16 p-3",
@@ -12,8 +11,8 @@ export const Navbar = ({ title }: NavbarProps): ReactElement => {
 
 	return (
 		<nav className={style}>
-			<div className="flex flex-row justify-end items-center w-16">
-
+			<div className="flex flex-row justify-start items-center w-16">
+				{ leftButton ?? <></> }
 			</div>
 
 			<h2 className="text-4xl font-medium">
@@ -21,7 +20,7 @@ export const Navbar = ({ title }: NavbarProps): ReactElement => {
 			</h2>
 
 			<div className="flex flex-row justify-end items-center w-16">
-				<GameButton />
+				{ rightButton ?? <></> }
 			</div>
 		</nav>
 	)
