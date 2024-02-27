@@ -5,3 +5,5 @@ export const arrayEquals = <T>(a: T[], b: T[]): boolean => {
 	}
 	return true
 }
+
+export const arrayLast = <T>(arr: T[]): T | undefined => arr[arr.length - 1]

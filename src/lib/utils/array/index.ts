@@ -1,1 +1,1 @@
-export { arrayEquals } from "./array.util"
+export { arrayEquals, arrayLast } from "./array.util"

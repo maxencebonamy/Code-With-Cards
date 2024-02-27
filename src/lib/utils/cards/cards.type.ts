@@ -1,5 +1,12 @@
+import type { GameState } from "@/lib/stores/game"
 import type { Color } from "@/lib/utils/colors"
 import type { ComponentType, SVGAttributes } from "react"
+
+type CardTypeActionProps = {
+	id: number
+	game: GameState
+	cards: (Card | null)[]
+}
 
 export type CardTypeProps = {
 	color: Color
@@ -7,6 +14,7 @@ export type CardTypeProps = {
 	icon: ComponentType<SVGAttributes<SVGElement>>
 	type: CardType
 	prop: string | number | null
+	action: ({ id, game, cards }: CardTypeActionProps) => void
 }
 
 export enum CardType {
