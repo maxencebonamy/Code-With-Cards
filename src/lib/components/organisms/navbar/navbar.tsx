@@ -1,7 +1,7 @@
 import type { ReactElement } from "react"
 import type { NavbarProps } from "."
 import clsx from "clsx"
-import { Button } from "@/lib/components/atoms/button"
+import { GameButton } from "@/lib/components/molecules/game-button"
 
 export const Navbar = ({ title }: NavbarProps): ReactElement => {
 	const style = clsx(
@@ -12,16 +12,17 @@ export const Navbar = ({ title }: NavbarProps): ReactElement => {
 
 	return (
 		<nav className={style}>
-			<div></div>
+			<div className="flex flex-row justify-end items-center w-16">
+
+			</div>
 
 			<h2 className="text-4xl font-medium">
 				{title ?? ""}
 			</h2>
 
-			<Button
-				color="green"
-				name="Démarrer"
-			/>
+			<div className="flex flex-row justify-end items-center w-16">
+				<GameButton />
+			</div>
 		</nav>
 	)
 }

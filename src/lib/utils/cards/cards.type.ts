@@ -5,6 +5,7 @@ export type CardTypeProps = {
 	color: Color
 	title: string
 	icon: ComponentType<SVGAttributes<SVGElement>>
+	type: CardType
 }
 
 export enum CardType {

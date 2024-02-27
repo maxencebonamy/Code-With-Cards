@@ -45,7 +45,7 @@ export const Card = ({ card, index = 0, inHand = false, className }: CardProps):
 			onClick={() => onClick()}
 		>
 			<card.icon className="w-16 h-16" />
-			<p className="text-2xl font-semibold text-white text-center uppercase">
+			<p className="text-xl font-semibold text-white text-center uppercase">
 				{card.title}
 			</p>
 		</div>

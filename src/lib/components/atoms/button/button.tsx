@@ -5,7 +5,7 @@ import type { ButtonProps } from "."
 import clsx from "clsx"
 import { computeColor } from "./button.util"
 
-export const Button = ({ name, color, className, onClick }: ButtonProps): ReactElement => {
+export const Button = ({ color, className, onClick, children }: ButtonProps): ReactElement => {
 	const [hover, setHover] = useState(false)
 	const [click, setClick] = useState(false)
 
@@ -44,7 +44,7 @@ export const Button = ({ name, color, className, onClick }: ButtonProps): ReactE
 			/>
 
 			<p className="relative z-20 text-2xl text-white font-medium uppercase">
-				{name}
+				{children}
 			</p>
 		</button>
 	)

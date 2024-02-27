@@ -8,12 +8,13 @@ export const CardSlot = ({ index, card, className }: CardSlotProps): ReactElemen
 		"bg-background shadow-slot",
 		"rounded-3xl",
 		"flex items-center justify-center",
+		"transition-all",
 		className ?? ""
 	)
 
 	if (card) {
 		return (
-			<Card card={card} />
+			<Card card={card} className={className ?? ""} />
 		)
 	}
 
