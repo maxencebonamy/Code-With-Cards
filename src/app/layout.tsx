@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Fredoka } from "next/font/google"
 import "@/lib/styles/globals.css"
 import type { PropsWithChildren, ReactElement } from "react"
-import clsx from "clsx"
+import { cn } from "@/lib/utils/style"
 
 const font = Fredoka({
 	weight: ["300", "400", "500", "600", "700"],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default ({ children }: PropsWithChildren): ReactElement => {
 	return (
 		<html lang="fr">
-			<body className={clsx(font.className, "bg-background overflow-x-hidden h-screen")}>{children}</body>
+			<body className={cn(font.className, "bg-background overflow-x-hidden h-screen")}>{children}</body>
 		</html>
 	)
 }

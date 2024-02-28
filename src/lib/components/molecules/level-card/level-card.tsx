@@ -3,14 +3,14 @@
 import { useState, type ReactElement } from "react"
 import type { LevelCardProps } from "."
 import Link from "next/link"
-import clsx from "clsx"
 import { CARD_STYLE } from "@/lib/components/molecules/card"
 import { computeColor } from "./level-card.util"
+import { cn } from "@/lib/utils/style"
 
 export const LevelCard = ({ level, color, className }: LevelCardProps): ReactElement => {
 	const [hover, setHover] = useState(false)
 
-	const style = clsx(
+	const style = cn(
 		"shadow-card",
 		"rounded-3xl",
 		"p-4",

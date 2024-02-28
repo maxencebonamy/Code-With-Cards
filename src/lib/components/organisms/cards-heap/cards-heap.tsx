@@ -2,12 +2,12 @@
 
 import type { ReactElement } from "react"
 import type { CardsHeapProps } from "."
-import clsx from "clsx"
 import { CardSlot } from "@/lib/components/molecules/card-slot"
 import { CARD_STYLE } from "@/lib/components/molecules/card"
 import { CARDS_HEAP_PADDING } from "./cards-heap.util"
 import { useCardsStore } from "@/lib/stores/cards"
 import { useGameStore } from "@/lib/stores/game"
+import { cn } from "@/lib/utils/style"
 
 export const CardsHeap = ({ className }: CardsHeapProps): ReactElement => {
 	const { gameIndex, gameStatus } = useGameStore(state => ({
@@ -15,7 +15,7 @@ export const CardsHeap = ({ className }: CardsHeapProps): ReactElement => {
 		gameStatus: state.status
 	}))
 
-	const style = clsx(
+	const style = cn(
 		"w-full",
 		"flex flex-row items-center justify-center gap-8",
 		"shadow-top",
@@ -25,7 +25,7 @@ export const CardsHeap = ({ className }: CardsHeapProps): ReactElement => {
 
 	const { cards } = useCardsStore(state => ({ cards: state.heap }))
 
-	const cardStyle = (index: number): string => clsx(
+	const cardStyle = (index: number): string => cn(
 		{ "border-4 border-white": gameStatus === "running" && index === gameIndex },
 		{ "border-4 border-red": gameStatus === "defeat" && index === gameIndex },
 	)

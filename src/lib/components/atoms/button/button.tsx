@@ -2,14 +2,14 @@
 
 import { useState, type ReactElement } from "react"
 import type { ButtonProps } from "."
-import clsx from "clsx"
 import { computeColor } from "./button.util"
+import { cn } from "@/lib/utils/style"
 
 export const Button = ({ color, className, onClick, children }: ButtonProps): ReactElement => {
 	const [hover, setHover] = useState(false)
 	const [click, setClick] = useState(false)
 
-	const buttonStyle = clsx(
+	const buttonStyle = cn(
 		"px-6 py-1",
 		"transition-all",
 		"relative",
@@ -17,7 +17,7 @@ export const Button = ({ color, className, onClick, children }: ButtonProps): Re
 		className ?? ""
 	)
 
-	const spanStyle = clsx(
+	const spanStyle = cn(
 		"w-full h-full absolute left-0",
 		"rounded-2xl transition-all"
 	)
@@ -35,20 +35,20 @@ export const Button = ({ color, className, onClick, children }: ButtonProps): Re
 			onMouseUp={() => setClick(false)}
 		>
 			<span
-				className={clsx(spanStyle, "z-0", click ? "bottom-0" : "-bottom-1")}
+				className={cn(spanStyle, "z-0", click ? "bottom-0" : "-bottom-1")}
 				style={{ backgroundColor: computeColor(color, hover) }}
 			/>
 
 			<span
-				className={clsx(spanStyle, "z-10 bg-black opacity-25", click ? "bottom-0" : "-bottom-1")}
+				className={cn(spanStyle, "z-10 bg-black opacity-25", click ? "bottom-0" : "-bottom-1")}
 			/>
 
 			<span
-				className={clsx(spanStyle, "z-20 bottom-0")}
+				className={cn(spanStyle, "z-20 bottom-0")}
 				style={{ backgroundColor: computeColor(color, hover) }}
 			/>
 
-			<p className={clsx("relative z-30 text-2xl font-medium uppercase", color === "white" ? "text-black" : "text-white")}>
+			<p className={cn("relative z-30 text-2xl font-medium uppercase", color === "white" ? "text-black" : "text-white")}>
 				{children}
 			</p>
 		</button>

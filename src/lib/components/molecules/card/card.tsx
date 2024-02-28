@@ -1,12 +1,12 @@
 "use client"
 
-import { useState, type ReactElement, useEffect } from "react"
+import { useState, type ReactElement } from "react"
 import { CARD_STYLE, type CardProps } from "."
-import clsx from "clsx"
 import { formatColor } from "@/lib/utils/colors"
 import { randint } from "@/lib/utils/random"
 import { useCardsStore } from "@/lib/stores/cards"
 import { CardSelector } from "@/lib/components/molecules/card-selector"
+import { cn } from "@/lib/utils/style"
 
 export const Card = ({ card, index = 0, inHand = false, className }: CardProps): ReactElement => {
 	const [hover, setHover] = useState(false)
@@ -14,7 +14,7 @@ export const Card = ({ card, index = 0, inHand = false, className }: CardProps):
 	const [rotate, _] = useState(randint(-4, 4))
 	const tranferCard = useCardsStore(state => state.tranferCard)
 
-	const style = clsx(
+	const style = cn(
 		"shadow-card",
 		"rounded-3xl",
 		"p-4",

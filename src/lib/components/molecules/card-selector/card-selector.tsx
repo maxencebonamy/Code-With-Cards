@@ -1,12 +1,12 @@
 import { useState, type ReactElement, useEffect } from "react"
 import type { CardSelectorProps } from "."
 import { Button } from "../../atoms/button"
-import clsx from "clsx"
+import { cn } from "@/lib/utils/style"
 
 export const CardSelector = ({ card, minValue, maxValue, className, onMouseEnter, onMouseLeave }: CardSelectorProps): ReactElement => {
 	const [value, setValue] = useState<number>(card.prop as number)
 
-	const style = clsx(
+	const style = cn(
 		"flex flex-row items-center justify-center gap-3",
 		className ?? ""
 	)

@@ -1,15 +1,15 @@
 import type { ReactElement } from "react"
 import type { VictoryOverlayProps } from "."
 import config from "@/lib/data/config.json"
-import clsx from "clsx"
 import { Button } from "@/lib/components/atoms/button"
 import Link from "next/link"
+import { cn } from "@/lib/utils/style"
 
 export const VictoryOverlay = ({ level, onReset, className }: VictoryOverlayProps): ReactElement => {
 	const nbLevels = config.nbLevels
 	const nextLevel = level < nbLevels ? level + 1 : null
 
-	const style = clsx(
+	const style = cn(
 		"absolute z-50 top-0 left-0 w-full h-full",
 		"flex flex-col justify-center items-center gap-8",
 		"bg-black bg-opacity-60",

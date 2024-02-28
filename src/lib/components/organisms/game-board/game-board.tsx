@@ -2,18 +2,18 @@
 
 import { useEffect, type ReactElement } from "react"
 import type { GameBoardProps } from "."
-import clsx from "clsx"
 import { ItemSlot } from "@/lib/components/molecules/item-slot"
 import { Item } from "@/lib/components/molecules/item"
 import { EmptyItemSlot } from "@/lib/components/molecules/empty-item-slot"
 import { useGameStore } from "@/lib/stores/game"
 import { useCardsStore } from "@/lib/stores/cards"
+import { cn } from "@/lib/utils/style"
 
 export const GameBoard = ({ className }: GameBoardProps): ReactElement => {
 	const game = useGameStore()
 	const cards = useCardsStore(state => state.heap)
 
-	const style = clsx(
+	const style = cn(
 		"flex flex-col items-center justify-center gap-6",
 		className ?? ""
 	)
