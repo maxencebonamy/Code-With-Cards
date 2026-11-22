@@ -72,7 +72,7 @@ const cardsTypes: Record<CardType, CardTypeProps> = {
 		type: CardType.For,
 		prop: 1,
 		action: ({ id, game, cards }) => {
-			const card = cards.find(card => card.id === id)
+			const card = cards.find(card => card && card.id === id)
 			if (!card) return
 			const loopIndexes = game.loopIndexes
 			loopIndexes.push({

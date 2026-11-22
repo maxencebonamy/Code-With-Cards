@@ -2,16 +2,21 @@
 	"level": 6,
 	"difficulty": 3,
 	"board": [
-		"soo  ",
-		"  ooh"
+		"soooo",
+		"    o",
+		"hoooo"
 	],
 	"cards": [
-		"Forward",
-		"Forward",
+		"For",
+		"For",
+		"For",
+		"LoopEnd",
+		"LoopEnd",
+		"LoopEnd",
 		"Forward",
 		"Forward",
 		"Forward",
 		"Right",
-		"Left"
+		"Right"
 	]
 }
