@@ -5,5 +5,8 @@
 		"postcss.config.js",
 		"next.config.js",
 		"next-env.d.ts"
-	]
+	],
+	"rules": {
+		"@typescript-eslint/no-empty-function": "off"
+	}
 }
