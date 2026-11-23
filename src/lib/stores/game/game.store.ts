@@ -108,6 +108,10 @@ export const useGameStore = create<GameState>()(set => ({
 		})
 	},
 
+	win: () => {
+		set(state => state.status === "running" ? { ...state, status: "victory" } : state)
+	},
+
 	reset: () => {
 		set(state => {
 			const { squirrel } = state

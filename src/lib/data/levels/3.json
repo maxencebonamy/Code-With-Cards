@@ -5,8 +5,8 @@
 		"sooooooh"
 	],
 	"cards": [
+		"LoopEnd",
 		"Forward",
-		"For",
-		"LoopEnd"
+		"For"
 	]
 }

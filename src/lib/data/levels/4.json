@@ -8,12 +8,12 @@
 	"cards": [
 		"Forward",
 		"Forward",
+		"For",
+		"Left",
+		"LoopEnd",
+		"For",
 		"Forward",
 		"Right",
-		"Left",
-		"For",
-		"For",
-		"LoopEnd",
 		"LoopEnd"
 	]
 }

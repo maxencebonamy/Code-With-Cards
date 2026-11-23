@@ -7,6 +7,7 @@ import { Item } from "@/lib/components/molecules/item"
 import { EmptyItemSlot } from "@/lib/components/molecules/empty-item-slot"
 import { useGameStore } from "@/lib/stores/game"
 import { useCardsStore } from "@/lib/stores/cards"
+import { isOnHazelnut } from "@/lib/utils/cards/cards.condition"
 import { cn } from "@/lib/utils/style"
 
 const TILE_SIZE = 80
@@ -46,7 +47,9 @@ export const GameBoard = ({ className }: GameBoardProps): ReactElement => {
 
 		const card = cards[game.index]
 		if (!card) {
-			game.reset()
+			const finished = game.index >= cards.length && cards.every(Boolean)
+			if (finished && isOnHazelnut(game)) game.win()
+			else game.reset()
 			return
 		}
 

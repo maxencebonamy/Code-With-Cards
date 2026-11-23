@@ -24,6 +24,7 @@ export type GameState = {
 	left: () => void
 	run: () => void
 	step: (maxIndex: number) => void
+	win: () => void
 	reset: () => void
 	setIndex: (index: number) => void
 }

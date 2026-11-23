@@ -6,12 +6,12 @@
 		"  ooh"
 	],
 	"cards": [
-		"Forward",
-		"Forward",
-		"Forward",
-		"Forward",
-		"Forward",
 		"Right",
-		"Left"
+		"Left",
+		"Forward",
+		"Forward",
+		"Forward",
+		"Forward",
+		"Forward"
 	]
 }

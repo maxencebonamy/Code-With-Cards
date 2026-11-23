@@ -2,24 +2,21 @@
 	"level": 9,
 	"difficulty": 3,
 	"board": [
-		"so  oo  h",
-		" oooooooo",
-		"  oo  oo "
+		"soooooo",
+		"      o",
+		"ooooo o",
+		"o h o o",
+		"o ooo o",
+		"o     o",
+		"ooooooo"
 	],
 	"cards": [
-		"For",
-		"For",
-		"For",
 		"LoopEnd",
-		"LoopEnd",
-		"LoopEnd",
+		"Else",
 		"Forward",
-		"Forward",
-		"Forward",
-		"Forward",
-		"Right",
-		"Right",
-		"Left",
-		"Left"
+		"Until",
+		"If",
+		"IfEnd",
+		"Right"
 	]
 }
