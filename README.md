@@ -2,7 +2,7 @@
 
 A puzzle game that teaches programming logic with cards.
 
-Pick a level, arrange instruction cards (move, turn, conditions, loops) to build a program, and run it to guide a squirrel to its hazelnut. The interface is in French and aimed at beginners.
+Pick a level, arrange instruction cards (move, turn, conditions, loops) to build a program, and run it to guide a squirrel to its hazelnut. The interface is in French and aimed at beginners. The game is available at <https://code-with-cards.maxencebonamy.fr>.
 
 ## Table of contents
 
